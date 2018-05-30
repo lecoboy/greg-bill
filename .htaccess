@@ -1,0 +1,5 @@
+<ifmodule mod_rewrite.c>
+	RewriteEngine On
+	RewriteRule ^index\.html$ /bill/index.php [L]
+	RewriteRule ^login\.html$ /bill/login.php [L]
+</ifmodule>
