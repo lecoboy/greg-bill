@@ -696,8 +696,8 @@ ul {
     margin-bottom: 60px;
   }
   .contact-content .contat-form {
-    background-color: rgba(250, 250, 250, 0.03);
-    padding: 20px;
+    /* background-color: rgba(250, 250, 250, 0.03); */
+    /* padding: 20px; */
     margin-right: 0px;
   }
   .contact-content {
