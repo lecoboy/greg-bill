@@ -1,0 +1,55 @@
+#example_wrapper{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#example_wrapper table{
+    width: 100% !important;
+}
+#example_wrapper table a{
+    color: #ff0000;
+    /* text-decoration:none; */
+}
+#example_length{
+    float:left;
+    width: 50%;
+    color: #fff;
+}
+#example_length label{
+    /* margin-top: 15px; */
+}
+#example_length select{
+    padding: 5px 0px;
+    display: inline-block;
+    color: #fff;
+    background-color: rgba(250, 250, 250, 0.05);
+    border: none;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+#example_length select option{
+    background-color: rgba(39, 39, 39, 0.62);
+}
+#example_filter{
+    float:left;
+    width: 50%;
+    color: #fff;
+}
+#example_filter input{
+    padding: 5px;
+    /*     width: 100%; */
+    display: inline-block;
+    color: #fff;
+    background-color: rgba(250, 250, 250, 0.05);
+    border: none;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+#example_info{
+    color: #fff;
+}
+#example_paginate a{
+    cursor: pointer;
+    margin-right: 15px;
+}
