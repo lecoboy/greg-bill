@@ -13,6 +13,16 @@ $dbname = "db_gregbill";
 $conn = @mysql_connect($servername, $username, $password);;
 mysql_select_db($dbname, $conn);
 
+// 不能删除其他角色添加的账单记录
+$sql = "SELECT username from bill where id=$id";
+$result = mysql_query($sql);
+$row = mysql_fetch_row($result);
+$addUser = $row[0];
+$loginUser = $_COOKIE['LoginUser'];
+if($loginUser != $addUser){
+	die("不可以删除其他主人添加的账单哟~(╯°Д°)╯");
+}
+
 $sql = "DELETE FROM `bill` where id=$id";
 
 if (mysql_query($sql) === TRUE) {

@@ -217,7 +217,8 @@ if(!isset($_COOKIE['LoginUser'])
 								table.ajax.reload();
 								layer.msg('已经帮您删除辣~o(*￣︶￣*)o', {icon: 1});
 							}else{
-								layer.msg('删除出现异常~(⊙o⊙)…', {icon: 2});
+								//layer.msg('删除出现异常~(⊙o⊙)…', {icon: 2});
+                layer.msg(result, {icon: 2});
 							}
 						},
 						error: function(){
