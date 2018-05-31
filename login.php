@@ -2,8 +2,13 @@
 if(isset($_COOKIE['LoginUser']) 
   && $_COOKIE['LoginUser']!=null
   && $_COOKIE['LoginUser']!=""){
-  header("Location: index.html");
+    if(isset($_COOKIE['lt']) 
+      && $_COOKIE['lt']!=null
+      && $_COOKIE['lt']!=""){
+      header("Location: index.php");
+    }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -131,7 +136,8 @@ if(isset($_COOKIE['LoginUser'])
 							layer.msg('登陆成功，欢迎~o(*￣︶￣*)o', {icon: 1});
 						}else{
                             // alert(result);
-							layer.msg('登陆失败，请检查您的账号密码~(⊙o⊙)…', {icon: 2});
+							//layer.msg('登陆失败，请检查您的账号密码~(⊙o⊙)…', {icon: 2});
+                            layer.msg(result, {icon: 2});
 						}
 					},
 					error: function(){

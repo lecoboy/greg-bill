@@ -1,9 +1,28 @@
 <?php
-if(!isset($_COOKIE['LoginUser']) 
-  || $_COOKIE['LoginUser']==null
-  || $_COOKIE['LoginUser']==""){
-  header("Location: login.html");
+$servername = "127.0.0.1";
+$username = "root";
+$password = "root";
+$dbname = "db_gregbill";
+// 创建连接
+$conn = @mysql_connect($servername, $username, $password);mysql_select_db($dbname, $conn);
+
+// 检验登陆
+if(!isset($_COOKIE['LoginUser']) || !isset($_COOKIE['lt'])){
+  header("Location: server/logout.php");
 }
+$luser = $_COOKIE['LoginUser'];
+$sql = "SELECT lt,state from ltime where username='$luser' ORDER BY id DESC";
+$result = mysql_query($sql);
+$row = mysql_fetch_row($result);
+$lt = $row[0];
+$state = $row[1];
+if($state != 0){
+  header("Location: server/logout.php");
+}
+if($_COOKIE['lt'] != $lt){
+  header("Location: server/logout.php");
+}
+
 ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
