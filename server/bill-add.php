@@ -19,7 +19,12 @@ $dbname = "db_gregbill";
 $conn = @mysql_connect($servername, $db_username, $db_password);;
 mysql_select_db($dbname, $conn);
 
-$sql = "INSERT INTO `bill` (`id`, `price`, `num`, `msg`, `addTime`, `username`) VALUES (NULL, '$price', '$num', '$msg', '$addTime', '$username')";
+// 处理区域
+$sql = "SELECT zone FROM user where username='$username'";
+$result = mysql_query($sql);
+$zone = mysql_fetch_row($result);
+
+$sql = "INSERT INTO `bill` (`id`, `price`, `num`, `msg`, `addTime`, `username`, `$zone`) VALUES (NULL, '$price', '$num', '$msg', '$addTime', '$username', '$zone')";
 
 if (mysql_query($sql) === TRUE) {
     die("true");
