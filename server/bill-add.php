@@ -22,7 +22,8 @@ mysql_select_db($dbname, $conn);
 // 处理区域
 $sql = "SELECT zone FROM user where username='$username'";
 $result = mysql_query($sql);
-$zone = mysql_fetch_row($result);
+$row = mysql_fetch_row($result);
+$zone = $row['zone'];
 
 $sql = "INSERT INTO `bill` (`id`, `price`, `num`, `msg`, `addTime`, `username`, `$zone`) VALUES (NULL, '$price', '$num', '$msg', '$addTime', '$username', '$zone')";
 
