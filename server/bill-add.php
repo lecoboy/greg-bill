@@ -3,6 +3,7 @@
 $price = $_POST['price'];
 $num = $_POST['num'];
 $msg = $_POST['msg'];
+$state = 0;
 $username = $_COOKIE['LoginUser'];
 if($num=="" || $num==null){
 	$num = 1;
@@ -25,7 +26,7 @@ $result = mysql_query($sql);
 $row = mysql_fetch_row($result);
 $zone = $row[0];
 
-$sql = "INSERT INTO `bill` (`id`, `price`, `num`, `msg`, `addTime`, `username`, `zone`) VALUES (NULL, '$price', '$num', '$msg', '$addTime', '$username', '$zone')";
+$sql = "INSERT INTO `bill` (`id`, `price`, `num`, `msg`, `addTime`, `username`, `zone`, `state`) VALUES (NULL, '$price', '$num', '$msg', '$addTime', '$username', '$zone', '$state')";
 
 if (mysql_query($sql) === TRUE) {
     die("true");
