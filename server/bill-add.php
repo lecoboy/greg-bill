@@ -19,7 +19,7 @@ $dbname = "db_gregbill";
 $conn = @mysql_connect($servername, $db_username, $db_password);;
 mysql_select_db($dbname, $conn);
 
-// 处理zone
+// 处理区域
 $sql = "SELECT zone FROM user where username = '$username'";
 $result = mysql_query($sql);
 $row = mysql_fetch_row($result);
