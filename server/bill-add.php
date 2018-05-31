@@ -24,7 +24,7 @@ $sql = "INSERT INTO `bill` (`id`, `price`, `num`, `msg`, `addTime`, `username`) 
 if (mysql_query($sql) === TRUE) {
     die("true");
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $sql . "<br>" . mysql_error();
 }
 
 mysql_close($conn);
