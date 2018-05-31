@@ -104,6 +104,7 @@ if(!isset($_COOKIE['LoginUser'])
 					                <th width="80">价格</th>
 					                <th width="80">数量</th>
 					                <th width="80">描述</th>
+                          <th width="80">角色</th>
 					                <th width="80">日期</th>
 					                <th width="40">操作</th>
 
@@ -165,6 +166,7 @@ if(!isset($_COOKIE['LoginUser'])
 		            {'data': 'price'},
 		            {'data': 'num'},
 		            {'data': 'msg'},
+                {'data': 'username'},
 		            {'data': 'addTime'},
 		            {'data': 'option'},
 		        ],
