@@ -168,7 +168,7 @@ if($_COOKIE['lt'] != $lt){
         }
       });
 			var table = $('#example').DataTable({
-		        "aaSorting": [[4, "desc"]],//默认第几个排序
+		        "aaSorting": [[5, "desc"]],//默认第几个排序
 		        "bStateSave": true,//状态保存
 		        "pading": false,
 		        "aoColumnDefs": [

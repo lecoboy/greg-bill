@@ -10,6 +10,12 @@ mysql_select_db($dbname, $conn);
 // 表单处理
 $username = $_POST['username'];
 $password = $_POST['password'];
+if($username == ""){
+	die("请输入用户名！");
+}
+if($password == ""){
+	die("请输入密码！");
+}
 // sql处理
 $sql = "SELECT * FROM user where username='$username'";
 $result = mysql_query($sql);
@@ -18,7 +24,9 @@ try {
 } catch (Exception $e) {
 	die("exception...........");
 }
-
+if($row == null){
+	die("用户不存在!");
+}
 if($row['password'] == $password){
 	// setcookie("LoginUser",$username,time()+7200);
 	// setcookie("user", "Alex Porter", time()+3600);

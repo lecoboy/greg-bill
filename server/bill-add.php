@@ -4,7 +4,19 @@ $price = $_POST['price'];
 $num = $_POST['num'];
 $msg = $_POST['msg'];
 $state = 0;
-$username = $_COOKIE['LoginUser'];
+if(isset($_COOKIE['LoginUser'])){
+	$username = $_COOKIE['LoginUser'];	
+}else{
+	if(isset($_POST['username'])){
+		$username = $_POST['username'];
+	}else{
+		die("未检测到登陆用户！");
+	}
+}
+//表单验证
+if($price == ""){
+	die("请填写价格！");
+}
 if($num=="" || $num==null){
 	$num = 1;
 }
